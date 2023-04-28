@@ -23,7 +23,11 @@ header {
     display: flex;
     align-items: center;
     padding-block: 10px;
-    padding-inline: 30px;
+    
+}
+
+nav {
+    display: flex;
 }
 
 header .site-logo {
@@ -145,4 +149,22 @@ header a:hover {
     background-color: #161616;
     color: white;
     border-radius: 10px;
+}
+
+/* vans page */
+
+.vans-container {
+    padding: 30px;
+    
+}
+
+.vans {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-evenly;
+    gap: 5px;
+}
+
+.van img {
+    width: 100%;
 }

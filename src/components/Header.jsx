@@ -11,6 +11,9 @@ function Header() {
                 <Link to={"/about"}>
                 <h3>ABOUT</h3>
                 </Link>
+                <Link to={"/vans"}>
+                <h3>VANS</h3>
+                </Link>
             </nav>
         </header>
            
