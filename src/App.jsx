@@ -1,22 +1,29 @@
 import React from "react"
-import Header from "./components/Header"
+import Layout from "./components/Layout"
 import Home from "./pages/Home"
 import About from "./pages/About"
-import Vans from "./pages/Vans"
-import VanDetail from "./pages/VanDetail"
+import Vans from "./pages/Vans/Vans"
+import VanDetail from "./pages/Vans/VanDetail"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Dashboard from "./pages/Host/Dashboard"
+import Income from "./pages/Host/Income"
+import Reviews from "./pages/Host/Reviews"
 
 
 function App() {
   return (
     
     <BrowserRouter>
-      <Header />
       <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/about" element={<About />}/>
-        <Route path="/vans" element={<Vans />}/>
-        <Route path="/vans/:id" element={<VanDetail />}/>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />}/>
+          <Route path="/about" element={<About />}/>
+          <Route path="/vans" element={<Vans />}/>
+          <Route path="/vans/:id" element={<VanDetail />}/>
+          <Route path="/host" element={<Dashboard />}/>
+          <Route path="/host/income" element={<Income />}/>
+          <Route path="/host/reviews" element={<Reviews />}/>
+        </Route>
       </Routes>
     </BrowserRouter>
     

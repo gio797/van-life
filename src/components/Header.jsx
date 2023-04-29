@@ -4,16 +4,11 @@ import { Link } from "react-router-dom"
 function Header() {
     return (
         <header>
-            <Link to={"/"} className="site-logo">
-                <h1>#VANLIFE</h1>
-            </Link>
+            <Link to={"/"} className="site-logo">#VANLIFE</Link>
             <nav>
-                <Link to={"/about"}>
-                <h3>ABOUT</h3>
-                </Link>
-                <Link to={"/vans"}>
-                <h3>VANS</h3>
-                </Link>
+                <Link to={"/host"}>HOST</Link>
+                <Link to={"/about"}>ABOUT</Link>
+                <Link to={"/vans"}>VANS</Link>
             </nav>
         </header>
            
