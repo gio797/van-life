@@ -51,6 +51,12 @@ header a:hover {
     text-decoration: underline;
 }
 
+.active-link {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #161616;
+}
+
 main {
     margin-bottom: 84px;
 }
@@ -129,7 +135,7 @@ footer {
 
 /*** ABOUT PAGE ***/
 .about-hero-image {
-    max-width: 100%;
+   width: 100%;
 }
 
 .about-page-content {
