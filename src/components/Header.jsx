@@ -6,9 +6,9 @@ function Header() {
         <header>
             <Link to={"/"} className="site-logo">#VANLIFE</Link>
             <nav>
-                <Link to={"/host"}>HOST</Link>
-                <Link to={"/about"}>ABOUT</Link>
-                <Link to={"/vans"}>VANS</Link>
+                <Link to={"/host"}>Host</Link>
+                <Link to={"/about"}>About</Link>
+                <Link to={"/vans"}>Vans</Link>
             </nav>
         </header>
            

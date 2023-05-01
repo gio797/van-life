@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Dashboard from "./pages/Host/Dashboard"
 import Income from "./pages/Host/Income"
 import Reviews from "./pages/Host/Reviews"
+import HostLayout from "./components/HostLayout"
 
 
 function App() {
@@ -20,9 +21,10 @@ function App() {
           <Route path="/about" element={<About />}/>
           <Route path="/vans" element={<Vans />}/>
           <Route path="/vans/:id" element={<VanDetail />}/>
-          <Route path="/host" element={<Dashboard />}/>
-          <Route path="/host/income" element={<Income />}/>
-          <Route path="/host/reviews" element={<Reviews />}/>
+          <Route path="/host" element={<HostLayout />}>
+            <Route path="/host/income" element={<Income />}/>
+            <Route path="/host/reviews" element={<Reviews />}/>
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>
