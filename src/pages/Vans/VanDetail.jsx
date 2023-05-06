@@ -5,7 +5,7 @@ import React, {useEffect, useState} from "react"
 export default function VanDetail() {
     const params = useParams()
     const location = useLocation()
-    console.log(location)
+    // console.log(location)
 
     const [van, setVan] = useState(null)
    
