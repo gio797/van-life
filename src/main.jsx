@@ -27,6 +27,7 @@ import HostLayout from "./components/HostLayout"
 import Error from "./components/Error"
 import { requireAuth } from "./utils"
 
+
 import "./server"
 
 const router = createBrowserRouter(createRoutesFromElements(
