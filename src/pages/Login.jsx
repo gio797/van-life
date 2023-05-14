@@ -1,5 +1,5 @@
-import { Form, redirect, useLoaderData, useNavigate } from "react-router-dom"
-import React, {useState} from "react"
+import { Form, redirect, useLoaderData, useNavigation, useActionData } from "react-router-dom"
+import React from "react"
 import { loginUser } from "../api"
 
 export function loader({request}) {
@@ -10,34 +10,25 @@ export async function action({ request }) {
     const formData = await request.formData()
     const email = formData.get("email")
     const password = formData.get("password")
-    const data = await loginUser({ email, password})
-    localStorage.setItem("loggedin", true)
-    return redirect('/host')
+    try {
+        const data = await loginUser({ email, password})
+        localStorage.setItem("loggedin", true)
+        return redirect('/host')
+    } catch(err) {
+        return err.message
+    }
 }
 
 export default function Login() {
-    const [status, setStatus] = useState("idle")
-    const [error, setError] = useState(null)
     const message = useLoaderData()
-    const navigate = useNavigate()
-
-    function handleSubmit(e) {
-        e.preventDefault()
-        setStatus("submitting")
-        setError(null)
-        loginUser(loginFormData)
-            .then(data => {
-                navigate("/host", {replace: true})
-            })
-            .catch(err => setError(err))
-            .finally(() => setStatus("idle"))
-    }
+    const errorMessage = useActionData()
+    const navigation = useNavigation()
 
     return (
         <div className="login-container">
             <h1>Sign in to your account</h1>
             {message && <h3 className="red">{message}</h3>}
-            {error && <h3 className="red">{error.message}</h3>}
+            {errorMessage && <h3 className="red">{errorMessage}</h3>}
             <Form 
                 method="post" 
                 className="login-form"
@@ -54,8 +45,8 @@ export default function Login() {
                     placeholder="Password"
                 />
                 <button 
-                disabled={status === 'submitting'}>
-                    {status === 'submitting' ? "Logging in...": "Log in"}
+                disabled={navigation.state === 'submitting'}>
+                    {navigation.state === 'submitting' ? "Logging in...": "Log in"}
                 </button>
             </Form>
         </div>
