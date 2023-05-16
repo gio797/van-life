@@ -1,4 +1,10 @@
-import { Link, useSearchParams, useLoaderData, defer, Await } from "react-router-dom"
+import { Link, 
+    useSearchParams, 
+    useLoaderData, 
+    defer, 
+    Await 
+} 
+from "react-router-dom"
 import { getVans } from "../../api"
 import { Suspense, useState } from "react"
 
