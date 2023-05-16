@@ -79,12 +79,6 @@ createServer({
       password: "p123",
       name: "Bob",
     });
-    server.create("user", {
-      id: "124",
-      email: "g@m.com",
-      password: "g123",
-      name: "Gio",
-    });
   },
 
   routes() {
@@ -93,7 +87,7 @@ createServer({
     this.timing = 1000;
 
     this.get("/vans", (schema, request) => {
-      // return new Response(400, {}, { error: "Error fetching data" });
+      // return new Response(400, {}, {error: "Error fetching data"})
       return schema.vans.all();
     });
 
